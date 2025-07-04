@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up Page</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form action="/" method="post">
+        <input type="text" name="name" placeholder="Enter Name" required><br><br>
+        <input type="text" name="mobileno" placeholder="Enter Mobile No" required><br><br>
+        <input type="text" name="emailid" placeholder="Enter Email Id" required><br><br>
+        <input type="date" name="dob" placeholder="Enter Date of Birth" required><br><br>
+        <select id="gender" name="gender" required>
+            <option value="" diable selected hidden>Select Gender</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select><br><br>
+        <input type="text" name="uname" placeholder="Enter Username" required><br><br>
+        <input type="password" id="password" placeholder="Enter Password" required><br><br>
+        <input type="password" id="repass" placeholder="Verify Password" required>
+        <input type="checkbox" id="chck1" onclick="myFunction()">Show Password<br><br>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("password");
+                var y = document.getElementById("repass");
+                    if (x.type === "password" && y.type==="password") {
+                        x.type = "text";
+                        y.type = "text";
+                    } else {
+                        x.type = "password";
+                        y.type = "password";
+                    }
+            }
+        </script>
+
+        <button type="submit" id="subbtn" onclick="myFunction2(event)">Submit</button>
+        <script>
+            function myFunction2() {
+                var x = document.getElementById("password").value;
+                var y = document.getElementById("repass").value;
+                    if (x!==y) {
+                        event.preventDefault()
+                        alert("Passwords do not match");
+                    }
+            }
+        </script>
+    </form>
+</body>
+
+</html>
+
+</html>
